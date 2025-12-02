@@ -31,9 +31,10 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 ${
         isScrolled ? 'glass-effect py-4' : 'bg-transparent py-6'
       }`}
+      style={{ transition: 'background-color 0.3s ease, padding 0.3s ease' }}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">

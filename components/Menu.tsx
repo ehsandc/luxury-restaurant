@@ -12,22 +12,25 @@ export default function Menu() {
   const menuItems = {
     appetizers: [
       {
-        name: 'Truffle Carpaccio',
-        description: 'Thinly sliced wagyu beef with black truffle shavings, aged parmesan, and arugula',
-        price: '$42',
-        ai: 'AI Recommended for meat lovers',
+        name: 'Beluga Caviar',
+        description: 'Premium Iranian caviar served with blinis, crème fraîche, and gold leaf',
+        price: '$125',
+        ai: 'Ultimate luxury starter',
+        image: '/images/menu/caviar.jpg',
       },
       {
-        name: 'Oysters Rockefeller',
-        description: 'Fresh oysters with spinach, pernod, and breadcrumbs',
+        name: 'Lobster Bisque',
+        description: 'Rich creamy soup with cognac, topped with fresh lobster medallions',
         price: '$38',
-        ai: 'Pairs perfectly with Champagne',
+        ai: 'Chef\'s signature',
+        image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80',
       },
       {
-        name: 'Foie Gras Terrine',
-        description: 'Duck foie gras with fig compote and brioche toast',
-        price: '$45',
-        ai: 'Chef\'s special recommendation',
+        name: 'Seared Scallops',
+        description: 'Hokkaido scallops with cauliflower purée, microgreens, and truffle oil',
+        price: '$42',
+        ai: 'Light and refined',
+        image: '/images/menu/scallops.jpg',
       },
     ],
     mains: [
@@ -36,18 +39,42 @@ export default function Menu() {
         description: 'A5 Japanese wagyu with truffle butter, seasonal vegetables',
         price: '$185',
         ai: 'Most popular dish',
+        image: 'https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80',
       },
       {
         name: 'Mediterranean Seabass',
         description: 'Pan-seared with lemon butter sauce, capers, and herb risotto',
         price: '$68',
         ai: 'Light and healthy option',
+        image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=80',
       },
       {
         name: 'Duck à l\'Orange',
         description: 'Roasted duck breast with orange gastrique and dauphinoise potatoes',
         price: '$72',
         ai: 'Classic French excellence',
+        image: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=600&q=80',
+      },
+      {
+        name: 'Truffle Carpaccio',
+        description: 'Thinly sliced wagyu beef with black truffle shavings, aged parmesan, and arugula',
+        price: '$48',
+        ai: 'AI Recommended for meat lovers',
+        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80',
+      },
+      {
+        name: 'Oysters Rockefeller',
+        description: 'Fresh oysters with spinach, pernod, and breadcrumbs',
+        price: '$42',
+        ai: 'Pairs perfectly with Champagne',
+        image: 'https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?w=600&q=80',
+      },
+      {
+        name: 'Foie Gras Special',
+        description: 'Duck foie gras with fig compote and brioche toast',
+        price: '$52',
+        ai: 'Chef\'s special recommendation',
+        image: 'https://images.unsplash.com/photo-1606728035253-49e8a23146de?w=600&q=80',
       },
     ],
     desserts: [
@@ -56,18 +83,21 @@ export default function Menu() {
         description: 'Dark chocolate soufflé with vanilla bean ice cream',
         price: '$24',
         ai: 'Best paired with espresso',
+        image: 'https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=600&q=80',
       },
       {
         name: 'Crème Brûlée',
         description: 'Classic vanilla custard with caramelized sugar',
         price: '$22',
         ai: 'Traditional favorite',
+        image: 'https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&q=80',
       },
       {
         name: 'Tarte Tatin',
         description: 'Caramelized apple tart with crème fraîche',
         price: '$26',
         ai: 'Perfect for sharing',
+        image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80',
       },
     ],
     beverages: [
@@ -76,18 +106,21 @@ export default function Menu() {
         description: 'Premier Grand Cru Classé, Bordeaux',
         price: '$850',
         ai: 'Pairs with Wagyu',
+        image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80',
       },
       {
         name: 'Dom Pérignon 2012',
         description: 'Vintage Champagne, France',
         price: '$425',
         ai: 'Celebration choice',
+        image: 'https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=600&q=80',
       },
       {
         name: 'Signature Cocktails',
         description: 'Handcrafted by our mixologists',
         price: '$22',
         ai: 'Try the Gold Rush',
+        image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80',
       },
     ],
   }
@@ -137,21 +170,33 @@ export default function Menu() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="glass-effect rounded-2xl p-6 hover:border-gold-400 transition-all"
+              className="glass-effect rounded-2xl overflow-hidden hover:border-gold-400 transition-all group"
             >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-serif font-semibold text-white">
+              {/* Image with Zoom Effect */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover transition-transform duration-[1500ms] ease-in-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute top-4 right-4 bg-gold-500 text-black px-3 py-1 rounded-full font-bold text-sm">
+                  {item.price}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-2xl font-serif font-semibold text-white mb-3">
                   {item.name}
                 </h3>
-                <span className="text-gold-400 font-bold text-xl">{item.price}</span>
-              </div>
-              <p className="text-white/70 mb-4 leading-relaxed">
-                {item.description}
-              </p>
-              <div className="flex items-center gap-2 text-gold-400 text-sm">
-                <Sparkles size={16} />
-                <span>{item.ai}</span>
+                <p className="text-white/70 mb-4 leading-relaxed">
+                  {item.description}
+                </p>
+                <div className="flex items-center gap-2 text-gold-400 text-sm">
+                  <Sparkles size={16} />
+                  <span>{item.ai}</span>
+                </div>
               </div>
             </motion.div>
           ))}
