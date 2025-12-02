@@ -23,7 +23,7 @@ export default function Menu() {
         description: 'Rich creamy soup with cognac, topped with fresh lobster medallions',
         price: '$38',
         ai: 'Chef\'s signature',
-        image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80',
+        image: '/images/menu/lobster-bisque.jpg',
       },
       {
         name: 'Seared Scallops',

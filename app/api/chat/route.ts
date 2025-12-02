@@ -7,7 +7,7 @@ const openai = new OpenAI({
 
 export async function POST(req: NextRequest) {
   try {
-    const { message, context } = await req.json()
+    const { message } = await req.json()
 
     const completion = await openai.chat.completions.create({
       model: process.env.OPENAI_MODEL || 'gpt-4-turbo-preview',

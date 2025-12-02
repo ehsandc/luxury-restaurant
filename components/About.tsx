@@ -30,8 +30,8 @@ export default function About() {
               every palate.
             </p>
             <p className="text-white/80 text-lg leading-relaxed mb-6">
-              Founded in 2010, we've been at the forefront of the gastronomic revolution, 
-              earning three Michelin stars and becoming the world's first restaurant to integrate 
+              Founded in 2010, we&apos;ve been at the forefront of the gastronomic revolution, 
+              earning three Michelin stars and becoming the world&apos;s first restaurant to integrate 
               AI-powered dining recommendations.
             </p>
             <p className="text-white/80 text-lg leading-relaxed">

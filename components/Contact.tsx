@@ -40,7 +40,7 @@ export default function Contact() {
             <span className="text-gradient">Get In Touch</span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            We're here to make your dining experience extraordinary
+            We&apos;re here to make your dining experience extraordinary
           </p>
         </motion.div>
 
