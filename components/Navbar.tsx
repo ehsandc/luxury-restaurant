@@ -36,8 +36,8 @@ export default function Navbar() {
       }`}
       style={{ transition: 'background-color 0.3s ease, padding 0.3s ease' }}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-4 max-w-full">
+        <div className="flex items-center justify-between w-full">
           <Link href="#home">
             <motion.h1
               whileHover={{ scale: 1.05 }}
@@ -64,7 +64,8 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-gold-400"
+            className="md:hidden text-gold-400 z-50 relative p-2 hover:bg-gold-400/10 rounded-lg transition-colors"
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={28} /> : <MenuIcon size={28} />}
           </button>
